@@ -13,7 +13,7 @@ import java.util.List;
 @Configuration
 public class UserConfig {
 
-    @Bean
+   /* @Bean
     CommandLineRunner commandLineRunner(UserRepository repository){
         return args -> {
             AppUser admin = new AppUser("admin", "admin", "admin@gmail.com", new BCryptPasswordEncoder().encode("admin"), UserRole.ADMIN, "Trento");
@@ -23,7 +23,7 @@ public class UserConfig {
 
         };
     }
-
+*/
 
 
 }
