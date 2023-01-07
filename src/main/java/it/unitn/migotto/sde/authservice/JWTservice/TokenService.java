@@ -1,6 +1,7 @@
 package it.unitn.migotto.sde.authservice.JWTservice;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.*;
@@ -13,14 +14,17 @@ import java.util.stream.Collectors;
 @Service
 public class TokenService {
 
-    private final JwtEncoder jwtEncoder;
-    private final JwtDecoder jwtDecoder;
+    @Autowired
+    private /*final*/ JwtEncoder jwtEncoder;
+
+    @Autowired
+    private /*final*/ JwtDecoder jwtDecoder;
 
 
-    public TokenService(JwtEncoder jwtEncoder, JwtDecoder jwtDecoder) {
+    /*public TokenService(JwtEncoder jwtEncoder, JwtDecoder jwtDecoder) {
         this.jwtEncoder = jwtEncoder;
         this.jwtDecoder = jwtDecoder;
-    }
+    }*/
 
 
     public String generateToken(Authentication authentication){

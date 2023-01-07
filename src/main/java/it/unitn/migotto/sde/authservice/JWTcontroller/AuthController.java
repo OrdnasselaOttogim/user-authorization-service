@@ -3,6 +3,7 @@ package it.unitn.migotto.sde.authservice.JWTcontroller;
 import it.unitn.migotto.sde.authservice.JWTservice.TokenService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.security.core.Authentication;
@@ -14,15 +15,16 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AuthController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
+    //private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
 
 
-    private final TokenService tokenService;
+    @Autowired
+    private /*final*/ TokenService tokenService;
 
 
-    public AuthController(TokenService tokenService) {
+    /*public AuthController(TokenService tokenService) {
         this.tokenService = tokenService;
-    }
+    }*/
 
 
     @PostMapping("/token")

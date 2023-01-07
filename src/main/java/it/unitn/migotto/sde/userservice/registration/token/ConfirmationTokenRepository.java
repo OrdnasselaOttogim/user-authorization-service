@@ -1,3 +1,4 @@
+/*
 package it.unitn.migotto.sde.userservice.registration.token;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,3 +13,4 @@ public interface ConfirmationTokenRepository extends JpaRepository<ConfirmationT
 
 
 }
+*/

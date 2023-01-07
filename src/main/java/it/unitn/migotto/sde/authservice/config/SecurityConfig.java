@@ -47,7 +47,7 @@ public class SecurityConfig {
         return provider;
     }
 
-    @Bean
+    /*@Bean
     public InMemoryUserDetailsManager user(){
         return new InMemoryUserDetailsManager(
                 User.withUsername("admin")
@@ -55,11 +55,13 @@ public class SecurityConfig {
                         .authorities("read")
                         .build()
         );
-    }
+    }*/
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, AuthenticationManagerBuilder auth) throws Exception {
+
         auth.authenticationProvider(daoAuthenticationProvider());
+
         return http
                 .cors().and()
                 .csrf(AbstractHttpConfigurer::disable)

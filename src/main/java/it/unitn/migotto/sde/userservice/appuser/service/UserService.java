@@ -2,8 +2,8 @@ package it.unitn.migotto.sde.userservice.appuser.service;
 
 import it.unitn.migotto.sde.userservice.appuser.model.AppUser;
 import it.unitn.migotto.sde.userservice.appuser.repository.UserRepository;
-import it.unitn.migotto.sde.userservice.registration.token.ConfirmationToken;
-import it.unitn.migotto.sde.userservice.registration.token.ConfirmationTokenService;
+//import it.unitn.migotto.sde.userservice.registration.token.ConfirmationToken;
+//import it.unitn.migotto.sde.userservice.registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -25,7 +25,7 @@ public class UserService implements UserDetailsService {
     private final static String USER_NOT_FOUND_MSG = "user with email %s not found";
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    private final ConfirmationTokenService confirmationTokenService;
+    //private final ConfirmationTokenService confirmationTokenService;
 
 
     @Autowired
@@ -55,13 +55,13 @@ public class UserService implements UserDetailsService {
         String token = UUID.randomUUID().toString();
 
         /**Send confirmation token*/
-        ConfirmationToken confirmationToken = new ConfirmationToken(
-                token,
-                LocalDateTime.now(),
-                LocalDateTime.now().plusMinutes(15),
-                appUser
-        );
-        confirmationTokenService.saveConfirmationToken(confirmationToken);
+//        ConfirmationToken confirmationToken = new ConfirmationToken(
+//                token,
+//                LocalDateTime.now(),
+//                LocalDateTime.now().plusMinutes(15),
+//                appUser
+//        );
+//        confirmationTokenService.saveConfirmationToken(confirmationToken);
 
         //TODO: send email
 
