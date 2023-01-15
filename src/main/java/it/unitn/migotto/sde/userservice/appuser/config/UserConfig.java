@@ -22,9 +22,9 @@ public class UserConfig {
                 repository.save(admin);
             }
 
-            if (repository.findByEmail("admin@gmail.com").isEmpty()) {
-                AppUser user1 = new AppUser("user", "user", "user@gmail.com", new BCryptPasswordEncoder().encode("user"), UserRole.USER, "Trento");
-                repository.save(user1);
+            if (repository.findByEmail("user@gmail.com").isEmpty()) {
+                AppUser user = new AppUser("user", "user", "user@gmail.com", new BCryptPasswordEncoder().encode("user"), UserRole.USER, "Trento");
+                repository.save(user);
             }
         };
     }
