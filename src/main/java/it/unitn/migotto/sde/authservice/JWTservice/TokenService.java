@@ -15,16 +15,16 @@ import java.util.stream.Collectors;
 public class TokenService {
 
     @Autowired
-    private /*final*/ JwtEncoder jwtEncoder;
+    private final JwtEncoder jwtEncoder;
 
     @Autowired
-    private /*final*/ JwtDecoder jwtDecoder;
+    private final JwtDecoder jwtDecoder;
 
 
-    /*public TokenService(JwtEncoder jwtEncoder, JwtDecoder jwtDecoder) {
+    public TokenService(JwtEncoder jwtEncoder, JwtDecoder jwtDecoder) {
         this.jwtEncoder = jwtEncoder;
         this.jwtDecoder = jwtDecoder;
-    }*/
+    }
 
 
     public String generateToken(Authentication authentication){
